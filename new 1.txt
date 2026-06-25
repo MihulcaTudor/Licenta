@@ -1,0 +1,57 @@
+ (deffacts stare-init
+; (stiva A B C)
+; (stiva D E F)
+; (scop muta C deasupra E)
+; )
+
+; (defrule mutare-libera
+; ?scop <- (scop muta ?bloc1 deasupra ?bloc2)
+; ?s1 <- (stiva ?bloc1 ?x $?ceva1)
+; ?s2 <-(stiva ?bloc2 $?ceva2)
+; =>
+; (printout t "s a mutat " ?bloc1 " deasupra " ?bloc2 crlf)
+; (retract ?scop ?s1 ?s2)
+; (assert (stiva ?x $?ceva1) (stiva ?bloc1 ?bloc2 $?ceva2))
+; )
+
+; (defrule mutare-podea
+; ?scop <- (scop muta ?bloc deasupra podea)
+; ?s1 <- (stiva ?bloc ?x $?ceva)
+; =>
+; (printout t "s a mutat " ?bloc " deasupra podea" crlf)
+; (retract ?scop ?s1)
+; (assert (stiva ?x $?ceva) (stiva ?bloc))
+; )
+
+; (defrule eliberare-sursa
+; (scop muta ?bloc1 deasupra ?)
+; (stiva ?blocm $? ?bloc1 $?)
+; =>
+; (printout t "eliberare " ?bloc1 crlf)
+; (assert (scop muta ?blocm deasupra podea))
+; )
+
+; (defrule eliberare-destinatie
+; (scop muta ? deasupra ?bloc1)
+; (stiva ?blocm $? ?bloc1 $?)
+; =>
+; (printout t "eliberare " ?bloc1 crlf)
+; (assert (scop muta ?blocm deasupra podea))
+; )
+
+; sau |
+; si &
+; not ~
+
+(deffacts fapte
+(student Ionescu AC V 1401 Vaslui)
+(student Popescu AC V 1402 Brasov)
+(student raul AC V 1402 Brasov)
+)
+
+(defrule R10
+(student ?nume1 AC ? ?gr&1401|1402 ?dom&~Iasi)
+(student ?nume2&~?nume1 AC ? ?gr ?dom | Bucuresti)
+=>
+(printout t "Studentii " ?nume1 " si " ?nume2 " din grupa " ?gr
+" indeplinesc conditiile cerute" crlf) )

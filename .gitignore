@@ -1,0 +1,18 @@
+# Medii virtuale (NU se urca pe GitHub)
+.venv/
+venv/
+wsl_env/
+env/
+
+# Fisiere de date prea mari
+*.csv
+*.csv.gz
+
+# Modele antrenate si vectori Pytorch
+*.pth
+*.pt
+
+# Setari de sistem si IDE
+.idea/
+__pycache__/
+*.pyc
