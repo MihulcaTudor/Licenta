@@ -1,3 +1,7 @@
+In acest repozitoriu se afla lucrarea de licenta a studentului Mihulca Tudor-Octavian, intitulata **Fuziune Multimodala Imagine-Text pentru Diagnosticul Radiografiilor Toracice**. 
+
+Mai jos aveti repartizarea fisierelor:
+
 1. **Preprocesare si Configurare Date**
    - `configurare_dataset_final.py`
 
