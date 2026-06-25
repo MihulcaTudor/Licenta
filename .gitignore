@@ -12,6 +12,11 @@ env/
 *.pth
 *.pt
 
+!mimic_cnn_model_best_1.pth
+!best_cxr_bert_model_3.pth
+!best_end2end_frozen.pth
+!best_fusion_mlp_offline.pth
+
 # Setari de sistem si IDE
 .idea/
 __pycache__/
