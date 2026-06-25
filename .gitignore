@@ -5,8 +5,8 @@ wsl_env/
 env/
 
 # Fisiere de date prea mari
-*.csv
-*.csv.gz
+#*.csv
+#*.csv.gz
 
 # Modele antrenate si vectori Pytorch
 *.pth
